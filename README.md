@@ -1,6 +1,6 @@
 # Storytelling Page (p_00) by Team Whatever
 
-###Roster and Roles
+### Roster and Roles
 Anthony Sun(Project Manager)
 - Work at intersection with Flask
 Elizabeth Paperno
@@ -8,4 +8,4 @@ Elizabeth Paperno
 Maya Nelson
 - Work to create HTML forms and css styling
 
-###Description
+### Description
