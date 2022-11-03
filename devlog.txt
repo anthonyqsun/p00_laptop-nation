@@ -2,5 +2,9 @@ elizabethP -- 2022-11-02 20:11
 add needed files based on skeleton
 update README heading
 
-mayan -- 2022-11-02 
-updated design doc with feedback -- added specific deadlines, more post-mvp features, and page detail
+mayaN -- 2022-11-02 2022-11-02 20:20
+updated design doc with feedback -- added specific deadlines, more post-mvp features, and page detaili
+
+anthonyS -- 2022-11-03 00:20
+update README description
+link submodule to RoH
