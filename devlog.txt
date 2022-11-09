@@ -1,3 +1,10 @@
+Laptop Nation
+Anthony Sun
+Elizabeth Paperno
+Maya Nelson
+
+Storytelling website what(ever)pad
+
 elizabethP -- 2022-11-02 20:11
 add needed files based on skeleton
 update README heading
