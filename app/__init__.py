@@ -5,6 +5,7 @@
 
 from flask import * # no namespace conflicts
 import os
+import db 
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32) # random key
@@ -43,6 +44,10 @@ def boo():
     # sends user back to login page
     return redirect("/")
 
-
+@app.route("/createNew")
+def boohoo():
+    return redirect("/createNew")
+    
 if __name__ == "__main__":
+    createTables()
     app.run()
