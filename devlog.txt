@@ -16,6 +16,12 @@ anthonyS -- 2022-11-03 00:20
 update README description
 link submodule to RoH
 
+elizabethP, mayaN, anthonyS -- 2022-11-07 09:00
+update app.py
+
+elizabethP, mayaN, anthonyS -- 2022-11-07 09:00
+fix db.py
+
 elizabethP -- 2022-11-07 20:45
 begin working on database backend
 add code from k19 to use as starting poitn with login page

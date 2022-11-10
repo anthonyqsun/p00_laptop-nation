@@ -14,11 +14,11 @@ Maya Nelson
 This app makes use of Python, Flask, SQLite3, and HTML to generate a dynamic website. It resembles a story-writing website, but only allows for viewing if a user has made edits to a story already. When making edits, only the last user's contribution is shown to the next editor. This is accomplished through SQL tables and Flask's variable URLs.
 
 # Launch Codes
-#### Clone Repository to Machine 
-SSH: ```git clone git@github.com:anthonyqsun/p00_laptop-nation.git```
+#### Pick Preferred Method to Clone Repository to Machine
+SSH: ```git clone git@github.com:anthonyqsun/p00_laptop-nation.git```  
 HTTPS: ```git clone https://github.com/anthonyqsun/p00_laptop-nation.git```
 #### Pip install required modules as listed in requirements.txt
-```pip install [module]```
+```pip install -r requirements.txt```
 #### Navigate to Repository
 ```cd p00_laptop-nation```
 #### Navigate to app directory
