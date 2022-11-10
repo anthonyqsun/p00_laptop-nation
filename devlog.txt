@@ -28,5 +28,13 @@ add code from k19 to use as starting poitn with login page
 
 elizabethP -- 2022-11-09 22:34
 user_info table methods working
-added launch codes to README
-updated requirments.txt
+add launch codes to README
+update requirments.txt
+
+mayaN -- 2022-11-09 9:00
+researched sql in python, retriveing data in python
+
+elizabethP, anthonyS -- 2022-11-09 9:00
+debug db.py
+add needed future funcs
+work on adding to story db (using auto_increment for field)
