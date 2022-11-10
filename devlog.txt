@@ -15,3 +15,12 @@ updated design doc with feedback -- added specific deadlines, more post-mvp feat
 anthonyS -- 2022-11-03 00:20
 update README description
 link submodule to RoH
+
+elizabethP -- 2022-11-07 20:45
+begin working on database backend
+add code from k19 to use as starting poitn with login page
+
+elizabethP -- 2022-11-09 22:34
+user_info table methods working
+added launch codes to README
+updated requirments.txt
