@@ -28,7 +28,7 @@ def addNewUser(username, password):
     db = conn[1]
     c.execute(f"INSERT INTO user_info VALUES ('{username}', '{password}');")
     disconnect(db)
-
+Í
 def addSectStory(title, init_user, init_part):
     # adds new story section to table
     conn =  establishConnection()
@@ -57,8 +57,8 @@ def getStories():
     vals = c.execute("SELECT DISTINCT story_title FROM story_section_info").fetchall()
     disconnect(db)
     formatted_stories= []
-    for i in range(len(vals)): 
-        formatted_stories.append(vals[i][0])
+    for val in vals: 
+        formatted_stories.append(val[0])
     return formatted_stories
 
 def getAttributedUsers(title):   
@@ -69,8 +69,8 @@ def getAttributedUsers(title):
     vals = c.execute(f"SELECT user_id FROM story_section_info WHERE story_title = '{title}'").fetchall()
     disconnect(db)
     formatted_users= []
-    for i in range(len(vals)): 
-        formatted_users.append(vals[i][0])
+    for val in vals: 
+        formatted_users.append(val[0])
     return formatted_users
 
 def viewLastPar(title): 
@@ -91,8 +91,8 @@ def viewFullStory(title):
     vals = c.execute(f"SELECT story_section FROM story_section_info WHERE story_title = '{title}' ORDER BY paragraph_id").fetchall()
     disconnect(db)
     formatted_text= []
-    for i in range(len(vals)): 
-        formatted_text.append(vals[i][0])
+    for val in vals: 
+        formatted_text.append(val[0])
     return formatted_text
     
 createTables()
