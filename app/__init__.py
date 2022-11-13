@@ -31,8 +31,8 @@ def root():
         if username in users and session['password'] == db.getPassword(username):
             return render_template("explore.html",
             username=username,
-            viewable=db.viewableStories(username),
-            editable=db.editableStories(username))
+            viewable=db.getListOfViewableStories(username),
+            editable=db.getListOfEditableStories(username))
     except:
         pass
     
@@ -86,8 +86,8 @@ def storyContent(var):
         return redirect("/")
         
     if session['username'] in db.getAttributedUsers(var):
-        return render_template("viewStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.viewFullStory(var))
-    return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.viewLastPar(var))
+        return render_template("viewStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getFullStory(var))
+    return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getLastPar(var))
 
 if __name__ == "__main__":
     db.createTables()

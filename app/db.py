@@ -29,12 +29,12 @@ def addNewUser(username, password):
     c.execute("INSERT INTO user_info VALUES (?, ?);", (username, password))
     disconnect(db)
 
-def addSectStory(title, init_user, init_part):
+def addSectStory(title, user, text):
     # adds new story section to table
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    c.execute("INSERT INTO story_section_info (story_title, user_id, story_section) VALUES (?, ?, ?)", (title, init_user, init_part))
+    c.execute("INSERT INTO story_section_info (story_title, user_id, story_section) VALUES (?, ?, ?)", (title, user, text))
     disconnect(db)
 
 def getUsers():
@@ -80,7 +80,7 @@ def getAttributedUsers(title):
         formatted_users.append(val[0])
     return formatted_users
 
-def viewLastPar(title): 
+def getLastPar(title): 
     # last paragraph of given story
     conn =  establishConnection()
     c = conn[0]
@@ -90,7 +90,7 @@ def viewLastPar(title):
     disconnect(db)
     return last_par
 
-def viewFullStory(title):
+def getFullStory(title):
     #full story in lists of sections
     conn =  establishConnection()
     c = conn[0]
@@ -102,7 +102,7 @@ def viewFullStory(title):
         formatted_text.append(val[0])
     return formatted_text
 
-def viewableStories(user):
+def getListOfViewableStories(user):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
@@ -112,10 +112,10 @@ def viewableStories(user):
         formatted_stories.append(val[0])
     return formatted_stories
 
-def editableStories(user):
+def getListOfEditableStories(user):
     # returns all stories user can edit (ones they haven't edited before)
     superset = set(getStories())
-    subset = set(viewableStories(user))
+    subset = set(getListOfViewableStories(user))
     return list(superset - subset)
 
 if __name__ == "__main__":
@@ -130,9 +130,9 @@ if __name__ == "__main__":
     print(getStories())
     print(getAttributedUsers("story1"))
     print(getAttributedUsers("story2"))
-    print(viewableStories("epaperno"))
-    print(editableStories("epaperno"))
-    print(viewableStories("asun"))
-    print(editableStories("asun"))
-    print(viewLastPar("story2"))
-    print(viewFullStory("story2"))
+    print(getListOfViewableStories("epaperno"))
+    print(getListOfEditableStories("epaperno"))
+    print(getListOfViewableStories("asun"))
+    print(getListOfEditableStories("asun"))
+    print(getLastPar("story2"))
+    print(getFullStory("story2"))
