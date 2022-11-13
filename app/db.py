@@ -26,7 +26,7 @@ def addNewUser(username, password):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    c.execute(f"INSERT INTO user_info VALUES ('{username}', '{password}');")
+    c.execute("INSERT INTO user_info VALUES (?, ?);", (username, password))
     disconnect(db)
 
 def addSectStory(title, init_user, init_part):
@@ -34,7 +34,7 @@ def addSectStory(title, init_user, init_part):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    c.execute(f"INSERT INTO story_section_info (story_title, user_id, story_section) VALUES ('{title}', '{init_user}', '{init_part}')")
+    c.execute("INSERT INTO story_section_info (story_title, user_id, story_section) VALUES (?, ?, ?)", (title, init_user, init_part))
     disconnect(db)
 
 def getUsers():
@@ -42,7 +42,7 @@ def getUsers():
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT user_id FROM user_info").fetchall()
+    vals = c.execute("SELECT user_id FROM user_info").fetchall()
     disconnect(db)
     formatted_users = []
     for i in range(len(vals)): 
@@ -53,7 +53,7 @@ def getPassword(user):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    passw = c.execute(f"SELECT password FROM user_info WHERE user_id = '{user}'").fetchall()[0][0]
+    passw = c.execute("SELECT password FROM user_info WHERE user_id = ?", (user,)).fetchall()[0][0]
     return passw
 
 def getStories():
@@ -73,7 +73,7 @@ def getAttributedUsers(title):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT user_id FROM story_section_info WHERE story_title = '{title}'").fetchall()
+    vals = c.execute("SELECT user_id FROM story_section_info WHERE story_title = ?", (title,)).fetchall()
     disconnect(db)
     formatted_users= []
     for val in vals: 
@@ -85,8 +85,8 @@ def viewLastPar(title):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    par_id = c.execute(f"SELECT MAX(paragraph_id) FROM story_section_info WHERE story_title = '{title}'").fetchall()[0][0]
-    last_par = c.execute(f"SELECT story_section FROM story_section_info WHERE paragraph_id = '{par_id}'").fetchall()[0][0]
+    par_id = c.execute("SELECT MAX(paragraph_id) FROM story_section_info WHERE story_title = ?", (title,)).fetchall()[0][0]
+    last_par = c.execute("SELECT story_section FROM story_section_info WHERE paragraph_id = ?", (par_id,)).fetchall()[0][0]
     disconnect(db)
     return last_par
 
@@ -95,10 +95,10 @@ def viewFullStory(title):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT story_section FROM story_section_info WHERE story_title = '{title}' ORDER BY paragraph_id").fetchall()
+    vals = c.execute("SELECT story_section FROM story_section_info WHERE story_title = ? ORDER BY paragraph_id", (title,)).fetchall()
     disconnect(db)
     formatted_text= []
-    for val in vals: 
+    for val in vals:
         formatted_text.append(val[0])
     return formatted_text
 
@@ -106,7 +106,7 @@ def viewableStories(user):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT story_title FROM story_section_info WHERE user_id = '{user}'")
+    vals = c.execute("SELECT story_title FROM story_section_info WHERE user_id = ?",(user,))
     formatted_stories = []
     for val in vals: 
         formatted_stories.append(val[0])
@@ -118,23 +118,21 @@ def editableStories(user):
     subset = set(viewableStories(user))
     return list(superset - subset)
 
-# this was for testing, everything looks like its working
-'''
-createTables()
-addNewUser("epaperno", "hi")
-addNewUser("asun", "hi")
-getPassword("epaperno")
-addSectStory("story1", "epaperno", "i am slaying")
-addSectStory("story2", "asun", "ayo")
-addSectStory("story2", "epaperno", "hi")
-print(getUsers())
-print(getStories())
-print(getAttributedUsers("story1"))
-print(getAttributedUsers("story2"))
-print(viewableStories("epaperno"))
-print(editableStories("epaperno"))
-print(viewableStories("asun"))
-print(editableStories("asun"))
-print(viewLastPar("story2"))
-print(viewFullStory("story2"))
-'''
+if __name__ == "__main__":
+    createTables()
+    addNewUser("epaperno", "hi")
+    addNewUser("asun", "hi")
+    getPassword("epaperno")
+    addSectStory("story1", "epaperno", "i am slaying")
+    addSectStory("story2", "asun", "ayo")
+    addSectStory("story2", "epaperno", "hi")
+    print(getUsers())
+    print(getStories())
+    print(getAttributedUsers("story1"))
+    print(getAttributedUsers("story2"))
+    print(viewableStories("epaperno"))
+    print(editableStories("epaperno"))
+    print(viewableStories("asun"))
+    print(editableStories("asun"))
+    print(viewLastPar("story2"))
+    print(viewFullStory("story2"))

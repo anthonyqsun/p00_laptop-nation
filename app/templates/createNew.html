@@ -2,11 +2,12 @@
 
 <h1> Create A New Story </h1>
 
-<form action="/" method="POST">
+<form action="/createNew" method="POST">
+    <h3>{{message}}</h3>
     <label>Title:</label><br/>
     <input type="text" name="title"><br/><br/>
     <label>Story:</label><br/>
-    <input type="text" name="storybody"><br/><br/>
+    <textarea name="storybody" rows="20" cols="50"></textarea><br/><br/>
     <input type="submit" name="sub">
 </form>
 

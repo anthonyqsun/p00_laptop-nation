@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 
 <h1>Welcome to Whatpad, {{username}}!</h1>
-<a href="/logout">Logout</a> <br/> <br/>
+<a href="/logout">Logout</a><br/><br/>
 
-<h2> List of Stories </h2> <br/>
+<h2>Stories you have not edited:</h2>
+<ul>
+    {% for edit in editable %}
+        <li><a href={{edit}}>{{edit}}</a></li>
+    {% endfor %}
+</ul>
+<h2>Stories you have written to:</h2>
+<ul>
+    {% for view in viewable %}
+        <li><a href={{view}}>{{view}}</a></li>
+    {% endfor %}
+</ul>
+
 
 <a href="/createNew"> Create New Story </a>
 

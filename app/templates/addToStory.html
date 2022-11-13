@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<a href="/">Return home</a><br/><br/>
+<h3>{{message}}</h3>
+<h1>{{title}}</h1>
+By: {{contusers}} <br/><br>
+{{content}}
 
-
+{% set s= "/" + title %}
+<form action={{s}} method="POST">
+    <textarea name="storybody" rows="20" cols="50"></textarea><br/><br/>
+    <input type="submit" name="sub">
+</form>
 </html>

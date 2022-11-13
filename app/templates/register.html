@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-    <h1>Login to Whatpad:</h1>
-    <a href="/register">Register</a><br/><br/>
-    <form action="/" method="POST">
+    <h1>Register for a Whatpad account:</h1>
+    <a href="/">Login</a><br/><br/>
+    <form action="/register" method="POST">
         <label>Username:</label><br/>
         <input type="text" name="username"><br/><br/>
         <label>Password:</label><br/>
         <input type="text" name="password"><br/><br/>
         <input type="submit" name="sub">
     </form>
-    <h3>{{message}}<a href="/register">{{register}}</a></h3>
+    <h3>{{message}}<a href="/">{{login}}</a></h3>
 
 </html>

@@ -38,3 +38,12 @@ elizabethP, anthonyS -- 2022-11-09 9:00
 debug db.py
 add needed future funcs
 work on adding to story db (using auto_increment for field)
+
+elizabethP -- 2022-11-13 10:20
+add getPassword to db
+add viewableStories, editableStories
+
+anthonyS -- 2022-11-13 16:25
+add backend functionality
+add html files for stories
+sanitize inputs
