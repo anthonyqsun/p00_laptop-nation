@@ -112,13 +112,13 @@ def viewableStories(user):
         formatted_stories.append(val[0])
     return formatted_stories
 
-'''
 def editableStories(user):
     # returns all stories user can edit (ones they haven't edited before)
-    conn =  establishConnection()
-    c = conn[0]
-    db = conn[1]
-    vals = c.execute(f"SELECT story_title FROM story_section_info WHERE user_id != '{user}'").fetchall()
+    superset = set(getStories())
+    subset = set(viewableStories(user))
+    return list(superset - subset)
+
+# this was for testing, everything looks like its working
 '''
 createTables()
 addNewUser("epaperno", "hi")
@@ -132,6 +132,9 @@ print(getStories())
 print(getAttributedUsers("story1"))
 print(getAttributedUsers("story2"))
 print(viewableStories("epaperno"))
+print(editableStories("epaperno"))
 print(viewableStories("asun"))
+print(editableStories("asun"))
 print(viewLastPar("story2"))
 print(viewFullStory("story2"))
+'''
