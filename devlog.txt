@@ -39,6 +39,11 @@ debug db.py
 add needed future funcs
 work on adding to story db (using auto_increment for field)
 
+elizabethP -- 2022-11-12 20:05
+write most of needed db funcs
+restructure story_info into story_section_info so we do not need to update exsisting entries and can just add new ones
+establish connection and disconnect each time db is accessed --> cleaner front end
+
 elizabethP -- 2022-11-13 10:20
 add getPassword to db
 add viewableStories, editableStories
