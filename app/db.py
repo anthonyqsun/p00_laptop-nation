@@ -29,12 +29,12 @@ def addNewUser(username, password):
     c.execute(f"INSERT INTO user_info VALUES ('{username}', '{password}');")
     disconnect(db)
 
-def addSectStory(title, init_user, init_part):
+def addSectStory(title, user, text):
     # adds new story section to table
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    c.execute(f"INSERT INTO story_section_info (story_title, user_id, story_section) VALUES ('{title}', '{init_user}', '{init_part}')")
+    c.execute(f"INSERT INTO story_section_info (story_title, user_id, story_section) VALUES ('{title}', '{user}', '{text}')")
     disconnect(db)
 
 def getUsers():
@@ -73,7 +73,7 @@ def getAttributedUsers(title):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT user_id FROM story_section_info WHERE story_title = '{title}'").fetchall()
+    vals = c.execute(f"SELECT DISTINCT user_id FROM story_section_info WHERE story_title = '{title}'").fetchall()
     disconnect(db)
     formatted_users= []
     for val in vals: 
@@ -90,7 +90,7 @@ def viewLastPar(title):
     disconnect(db)
     return last_par
 
-def viewFullStory(title):
+def getFullStory(title):
     #full story in lists of sections
     conn =  establishConnection()
     c = conn[0]
@@ -102,20 +102,20 @@ def viewFullStory(title):
         formatted_text.append(val[0])
     return formatted_text
 
-def viewableStories(user):
+def getListOfViewableFullStories(user):
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    vals = c.execute(f"SELECT story_title FROM story_section_info WHERE user_id = '{user}'")
+    vals = c.execute(f"SELECT DISTINCT story_title FROM story_section_info WHERE user_id = '{user}'")
     formatted_stories = []
     for val in vals: 
         formatted_stories.append(val[0])
     return formatted_stories
 
-def editableStories(user):
+def getListOfEditableStories(user):
     # returns all stories user can edit (ones they haven't edited before)
     superset = set(getStories())
-    subset = set(viewableStories(user))
+    subset = set(getListOfViewableFullStories(user))
     return list(superset - subset)
 
 # this was for testing, everything looks like its working
