@@ -59,3 +59,8 @@ fix bugs
 
 anthonyS, elizabethP -- 2022-11-14 9:18
 fix spaces in title
+
+mayaN -- 2022-11-14-5:32
+spent far too much time using css to make the whole thing pretty
+modified html files
+fixed last bugs
