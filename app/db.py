@@ -118,6 +118,7 @@ def getListOfEditableStories(user):
     subset = set(getListOfViewableStories(user))
     return list(superset - subset)
 
+'''
 if __name__ == "__main__":
     createTables()
     addNewUser("epaperno", "hi")
@@ -136,3 +137,5 @@ if __name__ == "__main__":
     print(getListOfEditableStories("asun"))
     print(getLastPar("story2"))
     print(getFullStory("story2"))
+'''
+

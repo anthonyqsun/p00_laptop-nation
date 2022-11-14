@@ -3,20 +3,22 @@
 <h1>Welcome to Whatpad, {{username}}!</h1>
 <a href="/logout">Logout</a><br/><br/>
 
-<h2>Stories you have not edited:</h2>
-<ul>
-    {% for edit in editable %}
-        <li><a href={{edit}}>{{edit}}</a></li>
-    {% endfor %}
-</ul>
-<h2>Stories you have written to:</h2>
+<a href="/createNew"> Create New Story </a>
+
+<h2>Your Stories:</h2>
+<p>View the full text of stories you have edited!</p>
 <ul>
     {% for view in viewable %}
         <li><a href={{view}}>{{view}}</a></li>
     {% endfor %}
 </ul>
 
-
-<a href="/createNew"> Create New Story </a>
+<h2>Explore:</h2>
+<p>Add your own twist to a story! Add a new part given the most recent contribution!</p>
+<ul>
+    {% for edit in editable %}
+        <li><a href={{edit}}>{{edit}}</a></li>
+    {% endfor %}
+</ul>
 
 </html>

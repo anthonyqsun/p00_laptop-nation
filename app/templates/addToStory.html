@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <a href="/">Return home</a><br/><br/>
 <h3>{{message}}</h3>
-<h1>{{title}}</h1>
+<h1>Title: {{title}}</h1>
 By: {{contusers}} <br/><br>
+<b>Latest Update: </b>
+<br/>
 {{content}}
+<br/>
 
+<p>Add your own text below (be aware you can only add to a story once!</p>
 {% set s= "/" + title %}
 <form action={{s}} method="POST">
     <textarea name="storybody" rows="20" cols="50"></textarea><br/><br/>

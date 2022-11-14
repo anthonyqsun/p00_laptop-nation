@@ -71,8 +71,9 @@ def register():
         if user == "" or pw == "":
             return render_template("register.html", message="inputs cannot be empty")
         db.addNewUser(user,pw)
+        session['username'] = user
+        session['password'] = pw
         return redirect("/")
-
     return render_template("register.html")
 
 
@@ -81,7 +82,7 @@ def storyContent(var):
     if request.method=="POST":
         body=request.form['storybody']
         if body=="":
-            return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.viewLastPar(var), message="input cannot be empty")
+            return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getLastPar(var), message="input cannot be empty")
         db.addSectStory(var, session['username'], body)
         return redirect("/")
         
