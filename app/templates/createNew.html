@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<a href="/">Return home</a><br/><br/>
-<h1> Create A New Story </h1>
-<p>Add a title and text to begin your story (Be aware you can only add to a story once!)</p>
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+    <h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1> <br/>
+
+<a href="/" class = "button3">Return home</a><br/><br/>
+
+<h1 class="title"> Create A New Story </h1>
+<body class = body>
+<p>Add a title and text to begin your story (Be aware you can only add to a story once!)</p> <br/>
 <form action="/createNew" method="POST">
     <h3>{{message}}</h3>
-    <label>Title:</label><br/>
+    <label>Title:</label>
     <input type="text" name="title"><br/><br/>
     <label>Story:</label><br/>
     <textarea name="storybody" rows="20" cols="50"></textarea><br/><br/>
     <input type="submit" name="sub">
 </form>
-
+</body>
+    <div class="footer vertical center">
+        <p>Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
+    </div>
 </html>

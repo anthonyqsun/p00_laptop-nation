@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-    <h1>Login to Whatpad:</h1>
-    <a href="/register">Register</a><br/><br/>
-    <form action="/" method="POST">
+
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+    <body>
+    <h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1> <br/>
+    <a href="/register" class="button1">Register</a> <br/>
+    <h2 class="title"> Please Login:</h2> <br/>
+    <form action="/" method="POST" class="body">
         <label>Username:</label><br/>
         <input type="text" name="username"><br/><br/>
         <label>Password:</label><br/>
         <input type="text" name="password"><br/><br/>
         <input type="submit" name="sub">
     </form>
-    <h3>{{message}}<a href="/register">{{register}}</a></h3>
-
+    <br/><br/>
+    <h3 class="title2">{{message}}<a href="/register">{{register}}</a></h3>
+    
+    <div class="footer verticalcenter">
+        <p>Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
+    </div>
+    </body>
 </html>

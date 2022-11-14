@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-    <h1>Register for a Whatpad account:</h1>
-    <a href="/">Login</a><br/><br/>
-
-    <h3>Create your Whatpad account by creating a new username and password!</h3>
-    <form action="/register" method="POST">
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1> <br/>
+    <a href="/" class = "button1">Login</a><br/>
+    <h1 class="title">Register for a Whatpad account:</h1> 
+    <br/>
+    <h3 class="title2">Create your Whatpad account by creating a new username and password!</h3> 
+    <br/>
+    <form action="/register" method="POST" class="body">
         <label>Username:</label><br/>
         <input type="text" name="username"><br/><br/>
         <label>Password:</label><br/>
         <input type="text" name="password"><br/><br/>
         <input type="submit" name="sub">
     </form>
-    <h3>{{message}}<a href="/">{{login}}</a></h3>
-
+    <h3 class="title2">{{message}}<a href="/">{{login}}</a></h3>
+    <div class="footer verticalcenter">
+        <p>Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
+    </div>
 </html>

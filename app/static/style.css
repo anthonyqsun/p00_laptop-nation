@@ -1,0 +1,110 @@
+* {
+    background-color: #E4E1F3;
+    margin: 0px;
+}
+
+div {
+    margin: 0px;
+}
+
+.title {
+    margin:15px;
+    color: #5449A7;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title2 {
+    margin:15px;
+    color:  #9588F1;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #CAC4F5; 
+    color: #5449A7;
+    border: 4px solid white;
+    font-family: "Courrier New", monospace;
+}
+
+.body {
+    color: #5449A7;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button1 {
+    margin-left: 93%;
+    width: 60px;
+    background-color: #CAC4F5; 
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    border: 4px solid white;
+}
+.button2 {
+    margin-left: 45%;
+    font-size: large;
+    width: 60px;
+    background-color: #CAC4F5; 
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    border: 4px solid white;
+}
+.button3 {
+    margin: 15px;
+    font-size: large;
+    width: 60px;
+    background-color: #CAC4F5; 
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    border: 4px solid white;
+}
+.footer {
+    background-color: #CAC4F5;
+    font-family: "Courrier New", monospace;
+    color: #5449A7;
+    text-align: right;
+    height: 36px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-right: 25px;
+}
+
+
+table {
+    color: #5449A7;
+    text-align: center;
+    width: 92%;
+}
+
+th {
+    color: #5449A7;
+    text-align: center;
+}
+
+td {
+    color: #5449A7;
+    text-align: center; 
+}

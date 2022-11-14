@@ -1,24 +1,37 @@
 <!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="static/style.css">
+</head>
 
-<h1>Welcome to Whatpad, {{username}}!</h1>
-<a href="/logout">Logout</a><br/><br/>
+    <h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1> <br/>
+    <a href="/logout" class = "button1">Logout</a><br/>
+    <h1 class="title">Welcome to Whatpad, {{username}}!</h1>
 
-<a href="/createNew"> Create New Story </a>
-
-<h2>Your Stories:</h2>
-<p>View the full text of stories you have edited!</p>
+    <table>
+        <tr>
+            <th> <h2>Your Stories:</h2> </th> 
+            <th><h2>Explore:</h2> </th>
+        </tr>
+        <tr> <td>
+<p>View the full text of stories you have edited!</p> </br>
 <ul>
     {% for view in viewable %}
         <li><a href={{view | replace(" ", "%20") }}>{{view}}</a></li>
     {% endfor %}
 </ul>
-
-<h2>Explore:</h2>
-<p>Add your own twist to a story! Add a new part given the most recent contribution!</p>
+</td> <td>
+<p>Add your own twist to a story!</p> </br>
 <ul>
     {% for edit in editable %}
         <li><a href={{edit | replace(" ", "%20") }}>{{edit}}</a></li>
     {% endfor %}
 </ul>
+</td></tr>
+</table>
+<br/> <br/>
+<a href="/createNew" class = "button2"> Create New Story </a>
 
+<div class="footer verticalcenter">
+    <p>Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
+</div>
 </html>
