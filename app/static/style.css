@@ -1,10 +1,24 @@
 * {
     background-color: #E4E1F3;
     margin: 0px;
+    font-family: "Courrier New", monospace;
 }
 
 div {
     margin: 0px;
+}
+
+a:link {
+    color: #5449A7;
+    text-decoration: none; 
+}
+
+a:visited {
+    color: #5449A7;
+}
+
+a:hover {
+    color: white;
 }
 
 .title {
@@ -49,7 +63,7 @@ div {
     margin-left: 93%;
     width: 60px;
     background-color: #CAC4F5; 
-    color: white;
+    color: #5449A7;
     padding: 10px 15px;
     font-size: 16px;
     text-align: center;
@@ -60,7 +74,7 @@ div {
     font-size: large;
     width: 60px;
     background-color: #CAC4F5; 
-    color: white;
+    color: #5449A7;
     padding: 10px 15px;
     font-size: 16px;
     text-align: center;
@@ -71,7 +85,7 @@ div {
     font-size: large;
     width: 60px;
     background-color: #CAC4F5; 
-    color: white;
+    color: #5449A7;
     padding: 10px 15px;
     font-size: 16px;
     text-align: center;
