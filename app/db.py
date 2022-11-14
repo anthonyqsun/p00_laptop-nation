@@ -80,7 +80,7 @@ def getAttributedUsers(title):
         formatted_users.append(val[0])
     return formatted_users
 
-def getLastPar(title): 
+def getLastPar(title):
     # last paragraph of given story
     conn =  establishConnection()
     c = conn[0]

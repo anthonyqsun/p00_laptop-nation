@@ -52,3 +52,10 @@ anthonyS -- 2022-11-13 16:25
 add backend functionality
 add html files for stories
 sanitize inputs
+
+elizabethP, mayaN -- 2022-11-14 9:18
+review html and updated UI to make it more user friendly
+fix bugs
+
+anthonyS, elizabethP -- 2022-11-14 9:18
+fix spaces in title

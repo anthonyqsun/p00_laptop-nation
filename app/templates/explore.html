@@ -9,7 +9,7 @@
 <p>View the full text of stories you have edited!</p>
 <ul>
     {% for view in viewable %}
-        <li><a href={{view}}>{{view}}</a></li>
+        <li><a href={{view | replace(" ", "%20") }}>{{view}}</a></li>
     {% endfor %}
 </ul>
 
@@ -17,7 +17,7 @@
 <p>Add your own twist to a story! Add a new part given the most recent contribution!</p>
 <ul>
     {% for edit in editable %}
-        <li><a href={{edit}}>{{edit}}</a></li>
+        <li><a href={{edit | replace(" ", "%20") }}>{{edit}}</a></li>
     {% endfor %}
 </ul>
 
