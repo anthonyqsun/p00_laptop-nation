@@ -50,12 +50,18 @@ def logout():
 
 @app.route("/createNew", methods = ['GET','POST'])
 def new():
+    try:
+        session['username']
+    except:
+        return redirect("/") # ensures user has auth to be on the page
+
     if request.method=="POST":
-        title=request.form['title']
+        title=request.form['title'].strip().replace(" ", "%20")
         body=request.form['storybody']
         if title=="" or body=="":
             return render_template("createNew.html", message="inputs cannot be empty")
         db.addSectStory(title, session['username'], body)
+        print("title added: "+title)
         return redirect("/")
 
     return render_template("createNew.html")
@@ -77,20 +83,30 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/<var>", methods = ['GET','POST'])
-def storyContent(var):
+@app.route("/<title>", methods = ['GET','POST'])
+def storyContent(title):
+    try:
+        session['username']
+    except:
+        return redirect("/") # ensures user has auth to be on the page
+
+    title = title.replace(" ", "%20")
+    if title=="favicon.ico":
+        return
+
     if request.method=="POST":
         body=request.form['storybody']
         if body=="":
-            return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getLastPar(var), message="input cannot be empty")
-        db.addSectStory(var, session['username'], body)
+            return render_template("addToStory.html", title=title, contusers=", ".join(db.getAttributedUsers(title)), content=db.getLastPar(title), message="input cannot be empty")
+        db.addSectStory(title, session['username'], body)
+        print("compontent added: "+title)
         return redirect("/")
         
-    if session['username'] in db.getAttributedUsers(var):
-        return render_template("viewStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getFullStory(var))
-    return render_template("addToStory.html", title=var, contusers=", ".join(db.getAttributedUsers(var)), content=db.getLastPar(var))
+    if session['username'] in db.getAttributedUsers(title):
+        return render_template("viewStory.html", title=title, contusers=", ".join(db.getAttributedUsers(title)), content=db.getFullStory(title))
+    return render_template("addToStory.html", title=title, contusers=", ".join(db.getAttributedUsers(title)), content=db.getLastPar(title))
 
 if __name__ == "__main__":
     db.createTables()
-    app.debug=True
+    # app.debug=True
     app.run()

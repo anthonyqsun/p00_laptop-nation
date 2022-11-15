@@ -53,14 +53,20 @@ add backend functionality
 add html files for stories
 sanitize inputs
 
-elizabethP, mayaN -- 2022-11-14 9:18
+elizabethP, mayaN -- 2022-11-14 09:18
 review html and updated UI to make it more user friendly
 fix bugs
 
-anthonyS, elizabethP -- 2022-11-14 9:18
+anthonyS, elizabethP -- 2022-11-14 09:18
 fix spaces in title
 
-mayaN -- 2022-11-14-5:32
+mayaN -- 2022-11-14 17:32
 spent far too much time using css to make the whole thing pretty
 modified html files
 fixed last bugs
+
+anthonyS -- 2022-11-14 21:10
+fix spacing bug finally!
+fix unncessary horizontal scroll issue with css
+refactor css
+set up for final presentation

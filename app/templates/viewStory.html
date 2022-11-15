@@ -3,11 +3,12 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 
-    <h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1> <br/>
+<div class="fullwidth"><h1 class="header">Whatpad -- Our Stories will Make you Say "What?"</h1></div> <br/>
 
-<a href="/" class="button3">Return home</a><br/><br/>
+
+<center><a href="/" class="button">Return home</a></center><br/><br/>
 <body class = "body">
-<h1>{{title}}</h1>
+<h1>{{ title | replace ("%20", " ") }}</h1>
 By: {{contusers}} <br/><br>
 
 {% for para in content %}
@@ -15,7 +16,7 @@ By: {{contusers}} <br/><br>
 {% endfor %}
 
 </body>
-    <div class="footer vertical center">
-        <p>Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
+    <div class="footer verticalcenter fullwidth">
+        <p class="rightmargin">Copyright © 2022 Whatever: Elizabeth, Maya, Anthony</p>
     </div>
 </html>

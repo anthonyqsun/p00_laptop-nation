@@ -4,17 +4,13 @@
     font-family: "Courrier New", monospace;
 }
 
-div {
-    margin: 0px;
+.fullwidth {
+    width: 100%;
 }
 
 a:link {
     color: #5449A7;
     text-decoration: none; 
-}
-
-a:visited {
-    color: #5449A7;
 }
 
 a:hover {
@@ -24,24 +20,17 @@ a:hover {
 .title {
     margin:15px;
     color: #5449A7;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
     text-align: center;
 }
 
 .title2 {
     margin:15px;
     color:  #9588F1;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
     text-align: center;
 }
 
 .header {
     margin: 0px;
-    width: 100%;
     height: 100%;
     padding: 20px;
     text-align: center;
@@ -53,15 +42,10 @@ a:hover {
 
 .body {
     color: #5449A7;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
     text-align: center;
 }
 
-.button1 {
-    margin-left: 93%;
-    width: 60px;
+.button {
     background-color: #CAC4F5; 
     color: #5449A7;
     padding: 10px 15px;
@@ -69,43 +53,22 @@ a:hover {
     text-align: center;
     border: 4px solid white;
 }
-.button2 {
-    margin-left: 45%;
-    font-size: large;
-    width: 60px;
-    background-color: #CAC4F5; 
-    color: #5449A7;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-align: center;
-    border: 4px solid white;
-}
-.button3 {
-    margin: 15px;
-    font-size: large;
-    width: 60px;
-    background-color: #CAC4F5; 
-    color: #5449A7;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-align: center;
-    border: 4px solid white;
-}
+
 .footer {
     background-color: #CAC4F5;
     font-family: "Courrier New", monospace;
     color: #5449A7;
-    text-align: right;
     height: 36px;
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 100%;
     position: absolute;
     bottom: 0;
-    padding-right: 25px;
 }
 
+.rightmargin {
+    margin-right: 25px;
+}
 
 table {
     color: #5449A7;
@@ -121,4 +84,8 @@ th {
 td {
     color: #5449A7;
     text-align: center; 
+}
+
+ul {
+    list-style-type: none;
 }
