@@ -15,12 +15,12 @@ def createTables():
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]
-    # c.execute(f"DROP TABLE IF EXISTS user_info")
-    # c.execute(f"DROP TABLE IF EXISTS story_section_info")
-    # c.execute(f"CREATE TABLE user_info (user_id TEXT PRIMARY KEY, password TEXT)")
-    # c.execute(f"CREATE TABLE story_section_info (paragraph_id INTEGER PRIMARY KEY AUTOINCREMENT, story_title TEXT, user_id TEXT, story_section TEXT)")
-    c.execute(f"CREATE TABLE IF NOT EXISTS user_info (user_id TEXT PRIMARY KEY, password TEXT)")
-    c.execute(f"CREATE TABLE IF NOT EXISTS story_section_info (paragraph_id INTEGER PRIMARY KEY AUTOINCREMENT, story_title TEXT, user_id TEXT, story_section TEXT)")
+    c.execute(f"DROP TABLE IF EXISTS user_info")
+    c.execute(f"DROP TABLE IF EXISTS story_section_info")
+    c.execute(f"CREATE TABLE user_info (user_id TEXT PRIMARY KEY, password TEXT)")
+    c.execute(f"CREATE TABLE story_section_info (paragraph_id INTEGER PRIMARY KEY AUTOINCREMENT, story_title TEXT, user_id TEXT, story_section TEXT)")
+    #c.execute(f"CREATE TABLE IF NOT EXISTS user_info (user_id TEXT PRIMARY KEY, password TEXT)")
+    #c.execute(f"CREATE TABLE IF NOT EXISTS story_section_info (paragraph_id INTEGER PRIMARY KEY AUTOINCREMENT, story_title TEXT, user_id TEXT, story_section TEXT)")
     
     disconnect(db)
 
