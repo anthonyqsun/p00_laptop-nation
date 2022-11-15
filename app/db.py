@@ -60,7 +60,7 @@ def getPassword(user):
     return passw
 
 def getStories():
-    # list of story tiltes (make titles unique)
+    # list of story titles (make titles unique)
     conn =  establishConnection()
     c = conn[0]
     db = conn[1]

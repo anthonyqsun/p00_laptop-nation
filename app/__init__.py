@@ -60,6 +60,8 @@ def new():
         body=request.form['storybody']
         if title=="" or body=="":
             return render_template("createNew.html", message="inputs cannot be empty")
+        if title in db.getStories():
+            return render_template("createNew.html", message="your story name must be unique!")
         db.addSectStory(title, session['username'], body)
         print("title added: "+title)
         return redirect("/")
