@@ -11,9 +11,11 @@
 <h1>{{ title | replace ("%20", " ") }}</h1>
 By: {{contusers}} <br/><br>
 
+<div style="padding: 0 20% 0 20%">
 {% for para in content %}
 <p>{{para}}</p>
 {% endfor %}
+</div>
 
 </body>
     <div class="footer verticalcenter fullwidth">
