@@ -1,7 +1,7 @@
 # Storytelling Page (p_00) by Team Whatever
 
 # Roster and Roles
-Anthony Sun(Project Manager)
+Anthony Sun (Project Manager)
 - Work at intersection with Flask
 
 Elizabeth Paperno
@@ -25,4 +25,4 @@ HTTPS: ```git clone https://github.com/anthonyqsun/p00_laptop-nation.git```
 ``` cd app```
 #### Run python file to launch sever
 ``` python3 __init__.py```
-#### Open server (seen in terminal) on web broswer
+#### Open server (seen in terminal) on web browser
