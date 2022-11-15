@@ -13,14 +13,15 @@
             <th><h2>Explore:</h2> </th>
         </tr>
         <tr> <td>
-<p>View the full text of stories you have edited!</p> </br>
+<p>View the full text of stories you have edited!</p>
 <ul>
     {% for view in viewable %}
         <li><a href={{view}}>{{view | replace ("%20", " ") }}</a></li>
     {% endfor %}
 </ul>
-</td> <td>
-<p>Add your own twist to a story!</p> </br>
+</td>
+<td>
+<p>Add your own twist to a story!</p>
 <ul>
     {% for edit in editable %}
         <li><a href={{edit}}>{{edit | replace ("%20", " ") }}</a></li>

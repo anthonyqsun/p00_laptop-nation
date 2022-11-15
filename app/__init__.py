@@ -14,11 +14,16 @@ def autoPop():
     db.addNewUser("Elizabeth", "e")
     db.addNewUser("Anthony", "a")
     db.addNewUser("Maya", "m")
-    db.addSectStory("Jack%20and%20Jill", "Elizabeth", "Jack and Jil went up the hill.")
+    db.addSectStory("Jack%20and%20Jill", "Elizabeth", "Jack and Jill went up the hill.")
     db.addSectStory("Little%20Red%20Riding%20Hood", "Anthony", "Once upon a time, there was a little girl who lived in a village near the forest. Whenever she went out, the little girl wore a red riding cloak, so everyone in the village called her Little Red Riding Hood.")
     db.addSectStory("The%20Three%20Little%20Pigs", "Maya", "Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them. So when they were old enough, she sent them out into the world to seek their fortunes.")
     db.addSectStory("The%20Three%20Little%20Pigs", "Anthony", "The first little pig was very lazy. He didn't want to work at all and he built his house out of straw. The second little pig worked a little bit harder but he was somewhat lazy too and he built his house out of sticks. Then, they sang and danced and played together the rest of the day.")
     db.addSectStory("The%20Three%20Little%20Pigs", "Elizabeth", "The third little pig worked hard all day and built his house with bricks. It was a sturdy house complete with a fine fireplace and chimney. It looked like it could withstand the strongest winds.")
+    db.addSectStory("Twilight%20Part%20One", "Anthony", "Once there were two vampires living peacefully.")
+    db.addSectStory("Twilight%20Part%20One", "Maya", "But everything changed when the fire nation attacked.")
+    db.addSectStory("Parry%20Hotter%20and%20the%20Stoned%20Sorcerer", "Elizabeth", "It was a dark and stormy night when Parry met a sorcerer.")
+    
+
     
 @app.route("/", methods = ['GET','POST'])
 def root():

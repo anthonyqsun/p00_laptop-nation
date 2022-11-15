@@ -70,3 +70,6 @@ fix spacing bug finally!
 fix unncessary horizontal scroll issue with css
 refactor css
 set up for final presentation
+
+elizabethP -- 2022-11-14- 22:56
+add autopop
